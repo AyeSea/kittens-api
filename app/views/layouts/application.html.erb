@@ -7,10 +7,13 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<% if flash.any? %>
+	<%= render 'layouts/flash' %>
+	<br>
+<% end %>
+
 <%= link_to "Home", root_path %>
 <%= link_to "Create a Kitten", new_kitten_path %>
-
-<%= render 'layouts/flash' if flash.any? %>
 
 <%= yield %>
 
