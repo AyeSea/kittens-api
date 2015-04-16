@@ -1,6 +1,6 @@
 class KittensController < ApplicationController
 	before_action :dropdown_values, only: [:new, :edit]
-	before_action :find_kitten, only: [:show, :edit, :update]
+	before_action :find_kitten, only: [:show, :edit, :update, :destroy]
 
 	def index
 		@kittens = Kitten.all
@@ -38,6 +38,9 @@ class KittensController < ApplicationController
 	end
 
 	def destroy
+	  @kitten.destroy
+	  flash[:success] = "Kitten deleted!"
+	  redirect_to root_path
 	end
 
 	private
@@ -59,7 +62,7 @@ class KittensController < ApplicationController
 	def find_kitten
 		begin
 			@kitten = Kitten.find(params[:id])
-		rescue
+		rescue	
 			flash[:error] = "Sorry, that kitten doesn't exist!"
 			redirect_to root_path
 		end

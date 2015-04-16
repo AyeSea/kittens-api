@@ -1,2 +1,4 @@
 <h1>Profile Page for <%= @kitten.name %></h1>
 <%= render @kitten %>
+<%= link_to "Edit Kitten", edit_kitten_path(@kitten) %>
+<%= link_to "Delete Kitten", @kitten, method: :delete %>
