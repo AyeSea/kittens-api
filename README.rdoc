@@ -2,4 +2,4 @@
 
 A basic web app involving kittens that can be accessed through the browser with HTML and as an API using JSON.
 
-More details [here](http://www.theodinproject.com/ruby-on-rails/apis?ref=lnav).
+More details here[http://www.theodinproject.com/ruby-on-rails/apis?ref=lnav].
